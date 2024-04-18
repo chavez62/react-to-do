@@ -1,4 +1,6 @@
-# TodoList Component ![react-1-logo-png-transparent](https://github.com/chavez62/react-to-do/assets/67764701/a8ba93fc-abec-4f7b-b397-e3656471573c)
+# TodoList Component 
+
+![react-1-logo-png-transparent](https://github.com/chavez62/react-to-do/assets/67764701/4440ae25-3aec-4028-872e-eb7bf3273657)
 
 
 
