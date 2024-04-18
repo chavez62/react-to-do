@@ -1,4 +1,6 @@
-# TodoList Component
+# TodoList Component ![react_small](https://github.com/chavez62/react-to-do/assets/67764701/5b76d735-bc60-4794-b3f0-c2eda2bb9c18)
+
+
 The TodoList component is a React functional component designed to manage a simple to-do list application. It allows users to interact with a list of tasks in several ways:
 
 ## Features
