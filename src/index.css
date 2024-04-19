@@ -19,6 +19,22 @@ button {
   transition: background-color 0.5s ease;
 }
 
+.edit-button {
+  background-color: hsl(180, 84%, 45%);
+}
+
+.edit-button:hover {
+  background-color: hsl(180, 47%, 44%);
+}
+
+.save-button {
+  background-color: hsl(124, 47%, 54%);
+}
+
+.save-button:hover {
+  background-color: hsl(124, 47%, 44%);
+}
+
 .add-button {
   background-color: hsl(124, 47%, 54%);
 }
@@ -78,6 +94,8 @@ li {
   flex: 1;
 }
 
+.save-button,
+.edit-button,
 .delete-button,
 .move-button,
 .down-button {

@@ -4,6 +4,8 @@ function TodoList() {
 
     const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState("");
+    const [editIndex, setEditIndex] = useState(-1);
+    const [editText, setEditText] = useState("");
 
     function handleInputChange(event) {
         setNewTask(event.target.value);
@@ -40,6 +42,23 @@ function TodoList() {
         }
     }
 
+    function handleEdit(index) {
+        setEditIndex(index);
+        setEditText(tasks[index]);
+    }
+
+    function handleSave(index) {
+        const updatedTasks = [...tasks];
+        updatedTasks[index] = editText;
+        setTasks(updatedTasks);
+        setEditIndex(-1); // Exit edit mode
+        setEditText("");
+    }
+
+    function handleEditChange(event) {
+        setEditText(event.target.value);
+    }
+
     return (
         <div className='to-do-list'>
             <h1>To-Do-List</h1>
@@ -52,23 +71,30 @@ function TodoList() {
                     onClick={addTask}>Add Task</button>
             </div>
             <ol>
-                {tasks.map((task, index) =>
-                    <li key={index}>
-                        <span className='text'>{task}</span>
-                        <button className='delete-button'
-                            onClick={() => deleteTask(index)}>
-                            Delete
-                        </button>
-                        <button className='move-button'
-                            onClick={() => moveTaskUp(index)}>
-                            ☝
-                        </button>
-                        <button className='down-button'
-                            onClick={() => moveTaskDown(index)}>
-                            👇
-                        </button>
-
-                    </li>)}
+            {tasks.map((task, index) =>
+            <li key={index}>
+        {editIndex === index ? (
+            <><span className='text'>{task}</span>
+                <input 
+                    type="text" 
+                    value={editText} 
+                    onChange={handleEditChange}
+                />
+                
+                <button className='save-button' onClick={() => handleSave(index)}>Save</button>
+                <button className='edit-button' onClick={() => setEditIndex(-1)}>Cancel</button>
+            </>
+        ) : (
+            <>
+                <span className='text'>{task}</span>
+                <button className='edit-button' onClick={() => handleEdit(index)}>Edit</button>
+                <button className='delete-button' onClick={() => deleteTask(index)}>Delete</button>
+                <button className='move-button' onClick={() => moveTaskUp(index)}>👆</button>
+                <button className='down-button' onClick={() => moveTaskDown(index)}>👇</button>
+            </>
+        )}
+    </li>
+)}
             </ol>
         </div>
     )
