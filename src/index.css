@@ -103,3 +103,26 @@ li {
   font-size: 1.4rem;
   margin-left: 10px;
 }
+
+@media (max-width: 600px) {
+  input {
+    width: 100%;
+  }
+
+  .text {
+    font-size: 1.5rem; /* Ensures the font size does not get too small */
+  }
+
+  li {
+    flex-direction: column; /* Stacks the elements vertically */
+    align-items: center; /* Aligns items to the start of the 'li' element */
+  }
+
+  button {
+    margin-top: 5px; /* Adds space above buttons when stacked vertically */
+    width: 100%; /* Makes buttons full width for easier tapping */
+  }
+  .move-button, .down-button {
+    display: none;
+  }
+}
