@@ -2,6 +2,7 @@
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   margin-top: 100px;
+  width: 100%;
 }
 
 h1 {
@@ -67,7 +68,7 @@ button {
   background-color: hsl(207, 90%, 54%);
 }
 
-input[type='text'] {
+input[type="text"] {
   font-size: 1.6rem;
   padding: 10px;
   border: 2px solid hsl(0, 0%, 80%, 0.5);
@@ -77,6 +78,11 @@ input[type='text'] {
 
 ol {
   padding: 0;
+  width: 75%;
+  padding: 0;
+  margin: 0 auto; /* Centers the list in the middle of its parent */
+  display: block;
+  width: 100%; /* Adjust this if needed */
 }
 
 li {
@@ -88,6 +94,9 @@ li {
   border: 3px solid hsl(0, 0%, 85%, 0.75);
   display: flex;
   align-items: center;
+  margin: 10px auto; /* Centers the <li> horizontally and adds margin at the bottom */
+  justify-content: center; /* Aligns children horizontally center */
+  width: 75%; /* Adjust to fit your design */
 }
 
 .text {
@@ -122,7 +131,8 @@ li {
     margin-top: 5px; /* Adds space above buttons when stacked vertically */
     width: 100%; /* Makes buttons full width for easier tapping */
   }
-  .move-button, .down-button {
+  .move-button,
+  .down-button {
     display: none;
   }
 }
